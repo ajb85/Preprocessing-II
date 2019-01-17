@@ -1,24 +1,83 @@
+// Header styles here
+header {
+  // Flex box DIV that contains the entire header
+  div {
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    .flexAlign(space-between);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 100%;
+    // Switch to column view for small screens
+    @media @mobile {
+      margin-top: 15px;
+      flex-direction: column;
+      padding-bottom: 10px;
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+    }
+    //Add "gutters" on smaller screens
+    @media @tablet {
+      padding-left: 7px;
+      padding-right: 7px;
+    }
+  }
+  .dashedBotBorder;
+}
+
 .home {
+  // Gutter for small screens
+  @media @mobile, @tablet {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+  // Bus picture + Welcome text
+  .intro {
+    img {
+      margin-bottom: 20px;
+    }
+    div {
+      padding-bottom: 5px;
+      .dashedBotBorder;
+    }
+  }
 
   .content-section {
     margin: 30px 0;
-    display: flex;
+    .flexAlign(space-between);
     flex-wrap: wrap;
-    justify-content: space-between;
+    @media @mobile {
+      flex-direction: column;
+      align-items: center;
+    }
 
-   
-    
     .text-content {
       width: 48%;
       padding-right: 1%;
+
+      @media @mobile {
+        width: 100%;
+        padding: 0 5px;
+      }
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
 
+      @media @mobile {
+        width: 100%;
+      }
+
       img {
         border-radius: 10px;
+
+        @media @mobile {
+          width: 100%;
+        }
       }
     }
   }
@@ -26,6 +85,12 @@
   .inverse-content {
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
+    .dashedBotBorder;
+
+    @media @mobile {
+      .flexAlign(center, center);
+      flex-direction: column-reverse;
+    }
 
     .text-content {
       padding-left: 1%;
@@ -42,8 +107,17 @@
     width: 75%;
     margin: 0 auto 30px;
 
+    @media @tablet {
+      width: 85%;
+    }
+    @media @mobile {
+      width: 100%;
+    }
+
     img {
       border-radius: 10px;
+      display: block;
+      margin: auto;
     }
   }
 
@@ -52,10 +126,36 @@
     border-top: 2px dashed @navigation-border;
     display: flex;
     justify-content: space-between;
+    // Switch content to column to save
+    // horizontal space on smalls creens
+    @media @mobile, @tablet {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
 
     .destination {
       width: 30%;
       margin-bottom: 30px;
+      // Use more horizontal space on small screens
+      @media @mobile, @tablet {
+        width: 80%;
+      }
+    }
+
+    button {
+      .custom-btn(#008080, #fff, 200px, 45px);
+      // Expand buttons on small screens for easier tapping
+      @media @mobile {
+        width: 100%;
+        background: #17a2b8;
+      }
+      @media @tablet {
+        display: block;
+        margin: auto;
+        max-width: 350px;
+        width: 100%;
+      }
     }
   }
-}// home
+} // home

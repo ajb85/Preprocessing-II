@@ -1,1 +1,48 @@
 // Mixins in here
+
+// .flexAlign(space-between, center);
+.flexAlign(@justify, @align: center) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
+.dashedBotBorder() {
+  border-bottom: 2px dashed @silver;
+}
+
+// .custom-btn(#008080, #fff, 200px, 45px);
+.custom-btn(@bgColor, @fontColor, @btnWidth, @btnHeight) {
+  .btn-keyframes(btnHover, @bgColor, @fontColor);
+  .btn-keyframes(btnLeave, @fontColor, @bgColor);
+
+  .btn-animations(btnLeave, 0.25s);
+  width: @btnWidth;
+  height: @btnHeight;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border-radius: 15px;
+  cursor: pointer;
+
+  &:hover {
+    .btn-animations(btnHover, 0.25s);
+  }
+}
+// .btn-keyframes(btnHover, @bgColor, @fontColor);
+.btn-keyframes(@aniName, @bgColor, @fontColor) {
+  @keyframes @aniName {
+    from {
+      background: @bgColor;
+      color: @fontColor;
+    }
+    to {
+      background: @fontColor;
+      color: @bgColor;
+    }
+  }
+}
+//.btn-animations(btnLeave, 0.25s);
+.btn-animations(@aniName, @aniDuration) {
+  animation-name: @aniName;
+  animation-duration: @aniDuration;
+  animation-fill-mode: both;
+}
