@@ -1,3 +1,4 @@
+// Background image settings
 .contactBody {
   background-color: #3857ef;
   background-image: url("../img/6897595-free-palm-tree-wallpaper.jpg");
@@ -5,14 +6,18 @@
   background-attachment: fixed;
   background-position: center;
 }
+// Header gets a background in contact.html to
+// override the bg image
 .contactHeader {
   background-color: #fff;
 }
+// Container DIV
 .contact {
   background-color: white;
   width: 100%;
   max-width: 800px;
   margin: auto;
+  // General styles for the form
   form {
     width: 80%;
     margin: auto;
@@ -34,12 +39,15 @@
       height: 30px;
       width: 200px;
     }
+
+    // Section contains DIVs for the spam+input
     section {
       width: 100%;
       max-width: 350px;
       .flexAlign(center);
       flex-direction: column;
       margin: auto;
+      // spans + inputs
       div {
         max-width: 400px;
         width: 100%;

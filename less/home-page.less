@@ -1,5 +1,6 @@
 // Header styles here
 header {
+  // Flex box DIV that contains the entire header
   div {
     max-width: 800px;
     width: 100%;
@@ -8,7 +9,7 @@ header {
     padding-top: 25px;
     padding-bottom: 25px;
     width: 100%;
-
+    // Switch to column view for small screens
     @media @mobile {
       margin-top: 15px;
       flex-direction: column;
@@ -18,6 +19,7 @@ header {
         margin-bottom: 20px;
       }
     }
+    //Add "gutters" on smaller screens
     @media @tablet {
       padding-left: 7px;
       padding-right: 7px;
@@ -27,6 +29,7 @@ header {
 }
 
 .home {
+  // Gutter for small screens
   @media @mobile, @tablet {
     padding-left: 7px;
     padding-right: 7px;
@@ -123,7 +126,8 @@ header {
     border-top: 2px dashed @navigation-border;
     display: flex;
     justify-content: space-between;
-
+    // Switch content to column to save
+    // horizontal space on smalls creens
     @media @mobile, @tablet {
       width: 100%;
       flex-direction: column;
@@ -133,7 +137,7 @@ header {
     .destination {
       width: 30%;
       margin-bottom: 30px;
-
+      // Use more horizontal space on small screens
       @media @mobile, @tablet {
         width: 80%;
       }
@@ -141,7 +145,7 @@ header {
 
     button {
       .custom-btn(#008080, #fff, 200px, 45px);
-
+      // Expand buttons on small screens for easier tapping
       @media @mobile {
         width: 100%;
         background: #17a2b8;
