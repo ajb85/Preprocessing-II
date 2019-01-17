@@ -1,1 +1,21 @@
 // Mixins in here
+
+// .flexAlign(space-between, center);
+.flexAlign(@justify, @align: center) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
+.dashedBotBorder() {
+  border-bottom: 2px dashed @silver;
+}
+// .custom-btn(#008080, #fff, 200px, 45px);
+.custom-btn(@background, @fontColor, @btnWidth, @btnHeight) {
+  background: @background;
+  width: @btnWidth;
+  height: @btnHeight;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border-radius: 15px;
+  color: @fontColor;
+}
